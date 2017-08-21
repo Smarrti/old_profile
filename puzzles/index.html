@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Загадки</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		var result = 0;
+
+		function AskQuestion(textBoxId, answer) {
+			var userAnswer = document.getElementById(textBoxId).value;
+			if (userAnswer == answer) {
+				result ++;
+			}
+		}
+
+		function AskQuestions() {
+			result = 0;
+			AskQuestion ("userAnswer1", "капуста");
+			AskQuestion ("userAnswer2", "елка");
+
+			if (result == 2)
+				alert ('Вы угадали все загадки');
+			else if (result == 1)
+				alert ('Вы угадали только одну загадку');
+			else
+				alert ('Нет угаданных загадок');
+
+		}
+	</script>
+</head>
+<body>
+	<div id="header">
+		<a href="../index.html">Главная</a><span>/</span>
+		<a href="#">Загадки</a><span>/</span>
+		<a href="../random">Угадать число</a><span>/</span>
+		<a href="../random-multi">Угадать число. Мультиплеер</a><span>/</span>
+	</div>
+
+	<div id="content">
+		<h1>Загадки</h1>
+		<div id="box">
+			<h5>Отгадай загадки</h5>
+			<p>Сто одёжек, и все без застежек.</p>
+			<input type="text" id="userAnswer1">
+
+			<p>Зимой и летом одним цветом</p>
+			<input type="text" id="userAnswer2">
+			<br></br>
+			<a href="#" onclick="AskQuestions();">Отправить</a>
+		</div>
+
+		<div id="footer">
+			&copy <a href="../index.html">Filin</a>
+		</div>
+	</div>
+</body>
+</html>

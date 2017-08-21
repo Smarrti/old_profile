@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Угадай число</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		var number = Math.floor (Math.random() * 100) + 1; //Компьютер придумывает число
+		console.log (number); //Вывод загаданного числа в консоль
+		var i = 0
+		alert ('Привет. Это игра "Угадай число. Компьютер загадывает тебе число от 1 до 100, а ты должен отгадать. В конце игры, я тебе скажу сколько раз ты пытался угадать. Если хочешь принудительно завершить игру, то ты должен написать в поле ввода ответ 0')
+		while (user_number != number) {
+			var user_number = prompt ('Угадай число от 1 до 100'); //Пользователь угадывает число
+	
+			if (user_number >= 0 && user_number <= 100) {
+				if (user_number == number) {
+					alert ('Вы угадали. Число попыток: ' + i);
+				} else if (user_number > number) {
+					alert ('Указанное число больше чем загаданное');
+					i++;
+				} else {
+					alert ('Указанное число меньше чем загаданное');
+					i++;
+				} if (user_number == 0) {
+					user_number = number;
+					alert ('Игра принудительно завершена. Ваше число попыток: ' + i-1);
+				}
+			} else {
+				alert ('Не верный ввод');
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box-text">
+		<h1>Спасибо за игру!</h1>
+		</br>
+		<a href="index.html">Ещё раз!</a>
+		</br>
+		<a href="..\random-multi">Играть с друзьями</a>
+		</br>
+		<a href="..\index.html">Вернуться на главную страницу</a>
+	</div>
+</body>
+</html>

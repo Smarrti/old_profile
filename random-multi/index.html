@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Угадать число. Мультиплеер</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		var number = Math.floor (Math.random() * 100) + 1; //Компьютер придумывает число
+		alert ('Привет. Это игра "Угадай число. Мультиплеер". Правила игры такие же, как в игре "Угадай число", но только с друзьями.')
+		var i = 0
+		var j = 0
+		while (user_number != number) {
+			var user_number = prompt ('Игрок 1 угадайте число от 1 до 100', 0); //Пользователь угадывает число
+	
+			if (user_number > 0 && user_number <= 100) {
+				if (user_number == number) {
+					alert ('Вы угадали. Число попыток: ' + i + ' Не говорите угаданное число Игроку 2, так как у него такое же число будет');
+				} else if (user_number > number) {
+					alert ('Указанное число больше чем загаданное');
+					i++;
+				} else {
+					alert ('Указанное число меньше чем загаданное');
+					i++;
+				}
+			} else {
+				alert ('Не верный ввод');
+			}
+		}
+		user_number = 0;
+		while (user_number != number) {
+			var user_number = prompt ('Игрок 2 угадайте число от 1 до 100', 0); //Пользователь угадывает число
+	
+			if (user_number > 0 && user_number <= 100) {
+				if (user_number == number) {
+					alert ('Вы угадали. Число попыток: ' + j);
+				} else if (user_number > number) {
+					alert ('Указанное число больше чем загаданное');
+					j++;
+				} else {
+					alert ('Указанное число меньше чем загаданное');
+					j++;
+				}
+			} else {
+				alert ('Не верный ввод');
+			}
+		}
+
+		if (i == j) {
+			alert ('Ничья');
+		} else if (i > j) {
+			alert ('Выиграл Игрок 2');
+		} else {
+			alert ('Выиграл Игрок 1');
+		}
+	</script>
+</head>
+<body>
+	<div id="box-text">
+		<h1>Спасибо за игру.</h1>
+		</br>
+		<a href="index.html">Еще раз</a>
+		</br>
+		<a href="..\random">Играть одному.</a>
+		</br>
+		<a href="..\index.html">Вернуться на главную страницу</a>
+	</div>
+</body>
+</html>
